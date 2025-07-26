@@ -1,0 +1,84 @@
+﻿@model PagedList.PagedList<ShopTechOnline.Models.EF.News>
+@using PagedList.Mvc;
+@using PagedList;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
+
+<style>
+    body {
+        margin-top: 200px;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+    }
+
+    .news_section {
+        margin-top: 200px;
+    }
+
+    h2 {
+        color: #4CAF50;
+        text-align: left;
+        border-bottom: 2px solid;
+    }
+
+    .news-item {
+        display: flex;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+
+        .news-item img {
+            max-width: 150px;
+            margin-right: 20px;
+        }
+
+    .news-content {
+        max-width: calc(100% - 170px);
+    }
+
+        .news-content h3 {
+            margin-top: 0;
+            color: #000;
+        }
+
+        .news-content p {
+            color: #666;
+        }
+</style>
+
+<body>
+    <div class="container news_section">
+        <h2>TIN TỨC</h2>
+
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <div class="news-item">
+                    <img src="@item.Image" alt="@item.Title">
+                    <div class="news-content">
+                        <h3><a href="/@item.Alias-n@(item.ID)" title="@item.Title">@item.Title</a></h3>
+                        <p>@item.Description</p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+            @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }))
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,79 @@
+﻿@model ShopTechOnline.Models.EF.News
+@{
+    ViewBag.Title = "Chi tiết tin tức";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
+
+<style>
+    body {
+        margin-top: 200px;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+    }
+
+    .news_section {
+        margin-top: 200px;
+    }
+
+    h2 {
+        color: #4CAF50;
+        text-align: left;
+        border-bottom: 2px solid;
+    }
+
+    .news-item {
+        display: flex;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+
+        .news-item img {
+            max-width: 150px;
+            margin-right: 20px;
+        }
+
+    .news-content {
+        max-width: calc(100% - 170px);
+    }
+
+        .news-content h3 {
+            margin-top: 0;
+            color: #000;
+        }
+
+        .news-content p {
+            color: #666;
+        }
+</style>
+
+<body>
+    <div class="container news_section">
+        @if (Model != null)
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>
+                        @Model.Title
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    @Model.Description
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    @Html.Raw(Model.Detail)
+                </div>
+            </div>
+        }
+    </div>
+</body>
