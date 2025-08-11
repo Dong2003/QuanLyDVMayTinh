@@ -9,7 +9,7 @@ Tổng quan về dự án:
 
 Một số hình ảnh của dự án:
 Giao diện website
-<img width="945" height="432" alt="image" src="https://github.com/user-attachments/assets/0f797054-f98c-44f8-889c-6245c42b20b9" />
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/0f797054-f98c-44f8-889c-6245c42b20b9" />
 <img width="945" height="433" alt="image" src="https://github.com/user-attachments/assets/30d00989-2cba-4fee-a07f-fbab36b5d141" />
 <img width="945" height="581" alt="image" src="https://github.com/user-attachments/assets/7c551321-4eaf-4c37-bd2d-83ca42f4f71f" />
 <img width="945" height="577" alt="image" src="https://github.com/user-attachments/assets/3ec2ae25-a9e1-4748-a02c-3782a42fe2e2" />
